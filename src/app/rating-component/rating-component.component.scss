@@ -1,22 +1,40 @@
 @import "./../../styles";
 
-fa-icon {
-  color: $orange;
-}
+
 
 main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: auto;
-  background-color: $dark-blue;
+  background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
   border-radius: 1rem;
 
   .header-rating {
+    z-index: 1;
     h1 {
       color: $white;
       @include mobile {
         margin-top: 1rem;
+      }
+    }
+
+    fa-icon {
+      position: relative;
+      color: $orange;
+      vertical-align: baseline;
+      &:after{
+        z-index: -1;
+        position: absolute;
+        content: '';
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $dark-blue;
+        top: 0;
+        left: 0;
+        transform: translate(-25%, -25%);
       }
     }
 
@@ -45,8 +63,22 @@ main {
   }
 
   button {
+    width: 100%;
+    border-radius: 22.5px;
+    border-color: transparent;
+    background-color: $orange;
+    color: $white;
+    font-weight: bold;
+    letter-spacing: 1.87px;
     @include mobile {
-      margin-top: 1.5rem;
+      height: 45px;
+      margin: 1.5rem 0 2rem 0 ;
+      &:after{
+        content: "";
+        display: inline-block;
+        height: 45px;
+        vertical-align: middle;
+      }
     }
   }
 
