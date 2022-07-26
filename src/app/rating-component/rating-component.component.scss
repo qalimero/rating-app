@@ -53,31 +53,49 @@ main {
       line-height: 22px;
     }
   }
-
-  ul {
-    display: flex;
-    list-style-type: none;
-    @include mobile {
-      margin-top: 1.5rem;
-    }
-  }
-
-  button {
+  form{
     width: 100%;
-    border-radius: 22.5px;
-    border-color: transparent;
-    background-color: $orange;
-    color: $white;
-    font-weight: bold;
-    letter-spacing: 1.87px;
-    @include mobile {
-      height: 45px;
-      margin: 1.5rem 0 2rem 0 ;
-      &:after{
-        content: "";
-        display: inline-block;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      justify-content: space-around;
+      padding-left: 0;
+      @include mobile {
+        margin-top: 1.5rem;
+      }
+      li{
+        position: relative;
+        z-index: 1;
+        &:after{
+          position: absolute;
+          z-index: -1;
+          content: '';
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: $dark-blue;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      border-radius: 22.5px;
+      border-color: transparent;
+      background-color: $orange;
+      color: $white;
+      font-weight: bold;
+      letter-spacing: 1.87px;
+      @include mobile {
         height: 45px;
-        vertical-align: middle;
+        margin: 1.5rem 0 2rem 0 ;
+        &:after{
+          content: "";
+          display: inline-block;
+          height: 45px;
+          vertical-align: middle;
+        }
       }
     }
   }
