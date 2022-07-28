@@ -38,7 +38,7 @@ $breakpoints: (
     h1 {
       font-size: map-get($font-size, title);
     }
-    p, li, button {
+    p, label, button {
       font-size: map-get($font-size, paragraph);
     }
   }
@@ -50,7 +50,7 @@ $breakpoints: (
     h1 {
       font-size: map-get($font-size, title)+0.3;
     }
-    p, li, button {
+    p, label, button {
       font-size: map-get($font-size, paragraph)+0.05;
     }
   }
