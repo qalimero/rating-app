@@ -1,24 +1,17 @@
 @import "./../../styles";
 
-
-
 main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: auto;
+  padding: 24px;
+  max-width: 327px;
   background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
   border-radius: 1rem;
 
   .header-rating {
     z-index: 1;
-    h1 {
-      color: $white;
-      @include mobile {
-        margin-top: 1rem;
-      }
-    }
-
     fa-icon {
       position: relative;
       color: $orange;
@@ -36,10 +29,21 @@ main {
         left: 0;
         transform: translate(-25%, -25%);
       }
+      @include desktop{
+        &:after{
+          width: 48px;
+          height: 48px;
+          transform: translate(-30%, -30%);
+        }
+      }
     }
 
-    @include mobile {
-      margin-top: 1.5rem;
+    h1 {
+      color: $white;
+      margin-top: 1.1rem;
+      @include desktop{
+        margin-top: 2rem;
+      }
     }
   }
 
@@ -48,11 +52,13 @@ main {
   }
 
   p {
-    @include mobile {
-      margin-top: 10px;
-      line-height: 22px;
+    margin-top: 10px;
+    line-height: 22px;
+    @include desktop {
+      margin-top:  15px;
     }
   }
+
   form{
     width: 100%;
     .radio-wrapper{
@@ -61,21 +67,24 @@ main {
       justify-content: space-around;
       margin-top: 24px;
       .radio{
+        display: table;
         width: 42px;
         height: 42px;
         border-radius: 50%;
         background-color: $dark-blue;
-
         p{
+          display: table-cell;
+          vertical-align: middle;
           text-align: center;
           font-weight: bold;
           color: $medium-grey;
         }
+        @include desktop {
+          width: 51px;
+          height: 51px;
+        }
       }
     }
-
-
-
     button {
       width: 100%;
       border-radius: 22.5px;
@@ -84,24 +93,28 @@ main {
       color: $white;
       font-weight: bold;
       letter-spacing: 1.87px;
-      @include mobile {
+      height: 45px;
+      margin: 1.5rem 0 0 ;
+      &:after{
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
         height: 45px;
-        margin: 1.5rem 0 2rem 0 ;
-        &:after{
-          content: "";
-          display: inline-block;
-          height: 45px;
-          vertical-align: middle;
-        }
+      }
+      @include desktop {
+        margin: 2rem 0 0;
       }
     }
   }
-  @include mobile {
-    max-width: 327px;
-    padding: 0 24px;
-
-  }
+  @include mobile;
   @include desktop {
-    padding: 0 32px;
+    max-width: 412px;
+    padding: 32px;
+  }
+}
+rating-active {
+  color: $white;
+  &:after{
+    background-color: $orange;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -6,12 +6,11 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
   templateUrl: './rating-component.component.html',
   styleUrls: ['./rating-component.component.scss']
 })
-export class RatingComponentComponent implements OnInit {
+export class RatingComponent implements AfterViewInit {
   faStar = faStar;
-
-  constructor() { }
-
-  ngOnInit(): void {
+  @ViewChild("rating") ratingSelect: ElementRef | undefined;
+  constructor() {}
+  ngAfterViewInit() {
+    console.log(this.ratingSelect?.nativeElement);
   }
-
 }

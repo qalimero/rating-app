@@ -33,7 +33,7 @@ $breakpoints: (
   "widescreen-up": 1440px
 );
 @mixin mobile {
-  @media screen and (max-width: map-get($breakpoints, phone-down)) {
+  @media screen and (max-width: map-get($breakpoints, widescreen-up)) {
     @content;
     h1 {
       font-size: map-get($font-size, title);
@@ -45,13 +45,19 @@ $breakpoints: (
 }
 
 @mixin desktop {
-  @media screen and (min-width: map-get($breakpoints, phone-down)) {
+  @media screen and (min-width: map-get($breakpoints, widescreen-up)) {
     @content;
     h1 {
       font-size: map-get($font-size, title)+0.3;
     }
-    p, label, button {
+    .text-body, label, button {
       font-size: map-get($font-size, paragraph)+0.05;
+      line-height: 1.5rem;
+    }
+    .radio{
+      p{
+        font-size: 1rem;
+      }
     }
   }
 }
