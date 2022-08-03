@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -6,11 +6,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
   templateUrl: './rating-component.component.html',
   styleUrls: ['./rating-component.component.scss']
 })
-export class RatingComponent implements AfterViewInit {
+export class RatingComponent {
   faStar = faStar;
-  @ViewChild("rating") ratingSelect: ElementRef | undefined;
+  radios = ['1', '2', '3', '4', '5'];
   constructor() {}
-  ngAfterViewInit() {
-    console.log(this.ratingSelect?.nativeElement);
-  }
 }

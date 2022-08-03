@@ -66,18 +66,22 @@ main {
       align-items: center;
       justify-content: space-around;
       margin-top: 24px;
+      padding-left: 0;
       .radio{
         display: table;
         width: 42px;
         height: 42px;
         border-radius: 50%;
         background-color: $dark-blue;
-        p{
+        text-align: center;
+        li{
           display: table-cell;
           vertical-align: middle;
-          text-align: center;
-          font-weight: bold;
-          color: $medium-grey;
+          list-style-type: none;
+          p{
+            font-weight: bold;
+            color: $medium-grey;
+          }
         }
         @include desktop {
           width: 51px;
@@ -112,9 +116,8 @@ main {
     padding: 32px;
   }
 }
-rating-active {
-  color: $white;
-  &:after{
-    background-color: $orange;
+.ratingActive {
+      background-color: $orange;
+      color: $white;
   }
-}
+

@@ -8,23 +8,11 @@
     offering!
   </p>
   <form>
-    <div class="radio-wrapper" #rating>
-      <div class="radio">
-        <p>1</p>
-      </div>
-      <div class="radio">
-        <p>2</p>
-      </div>
-      <div class="radio">
-        <p>3</p>
-      </div>
-      <div class="radio">
-        <p>4</p>
-      </div>
-      <div class="radio">
-        <p>5</p>
-      </div>
-    </div>
+    <ul class="radio-wrapper">
+      <li *ngFor="let radio of radios" [ngClass]="'radio'">
+        <p>{{ radio }}</p>
+      </li>
+    </ul>
     <button>SUBMIT</button>
   </form>
 </main>
