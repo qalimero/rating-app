@@ -9,5 +9,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 export class RatingComponent {
   faStar = faStar;
   radios = ['1', '2', '3', '4', '5'];
-  constructor() {}
+  constructor() {
+  }
 }
+
+
