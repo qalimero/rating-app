@@ -10,7 +10,8 @@
   <form>
     <ul class="radio-wrapper">
       <li *ngFor='let radio of radios' [ngClass]="['radio']">
-        <p>{{ radio }}</p>
+        <input type="radio">
+        <label>{{ radio }}</label>
       </li>
     </ul>
     <button>SUBMIT</button>
