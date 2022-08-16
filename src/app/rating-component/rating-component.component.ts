@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import {Component, ElementRef, Renderer2} from '@angular/core';
+import {faStar} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-rating-component',
@@ -9,8 +9,10 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 export class RatingComponent {
   faStar = faStar;
   radios = ['1', '2', '3', '4', '5'];
-  constructor() {
+
+  constructor(private renderer: Renderer2,
+              private elementRef: ElementRef
+  ) {
   }
 }
-
 
