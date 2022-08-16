@@ -77,18 +77,31 @@ main {
         position: relative;
         list-style-type: none;
 
-        input[type="radio" i] {
-          position: absolute;
-          transform: translate(-50%, -50%);
-          width: 42px;
+        input[type="checkbox"] {
+          display: none;
+        }
+
+        .custom-checkbox {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           height: 42px;
+          width: 42px;
+          background-color: $dark-blue;
+          border: 1px solid $dark-blue;
+          border-radius: 50%;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $orange;
+            color: $white;
+          }
         }
 
-        label {
-          position: absolute;
-          transform: translate(-50%, -50%);
+        .active {
+          background-color: $medium-grey;
+          color: $white;
         }
-
 
         @include desktop {
           width: 51px;

@@ -10,8 +10,8 @@
   <form>
     <ul class="radio-wrapper">
       <li *ngFor='let radio of radios' [ngClass]="['radio']">
-        <input type="radio">
-        <label>{{ radio }}</label>
+        <input type="checkbox">
+        <label [class.active]="isActive == true" (click)="checkActive()" [ngClass]="['custom-checkbox']">{{ radio }}</label>
       </li>
     </ul>
     <button>SUBMIT</button>
