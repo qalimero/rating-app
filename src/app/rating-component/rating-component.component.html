@@ -9,9 +9,10 @@
   </p>
   <form>
     <ul class="radio-wrapper">
-      <li *ngFor='let radio of radios' [ngClass]="['radio']">
-        <input type="checkbox">
-        <label [class.active]="isActive == true" (click)="checkActive()" [ngClass]="['custom-checkbox']">{{ radio }}</label>
+      <li *ngFor='let radio of radios; let idx = index' [ngClass]="['radio']">
+        <input class="visually-hidden" id="rate_{{ idx }}" name="rate" type="radio">
+        <label [ngClass]="['custom-checkbox']"
+               for="rate_{{ idx }}">{{ radio }}</label>
       </li>
     </ul>
     <button>SUBMIT</button>

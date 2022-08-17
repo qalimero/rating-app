@@ -6,6 +6,16 @@
   margin: 0;
 }
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 $font-size: (
   title: 1.5rem,
   paragraph: 0.88rem,
@@ -54,7 +64,7 @@ $breakpoints: (
       font-size: map-get($font-size, paragraph)+0.05;
       line-height: 1.5rem;
     }
-    .radio{
+    .radio {
       label {
         font-size: 1rem;
         font-weight: bold;

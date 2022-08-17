@@ -77,10 +77,6 @@ main {
         position: relative;
         list-style-type: none;
 
-        input[type="checkbox"] {
-          display: none;
-        }
-
         .custom-checkbox {
           display: flex;
           align-items: center;
@@ -88,7 +84,7 @@ main {
           height: 42px;
           width: 42px;
           background-color: $dark-blue;
-          border: 1px solid $dark-blue;
+
           border-radius: 50%;
           cursor: pointer;
 
@@ -96,9 +92,14 @@ main {
             background-color: $orange;
             color: $white;
           }
+
+          @include desktop {
+            height: 51px;
+            width: 51px;
+          }
         }
 
-        .active {
+        input[type=radio]:checked + label {
           background-color: $medium-grey;
           color: $white;
         }
@@ -130,6 +131,12 @@ main {
 
       @include desktop {
         margin: 2rem 0 0;
+      }
+
+      &:hover {
+        background-color: $white;
+        color: $orange;
+        cursor: pointer;
       }
     }
   }
