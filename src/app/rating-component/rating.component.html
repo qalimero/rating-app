@@ -12,12 +12,12 @@
     <form>
       <ul class="radio-wrapper">
         <li *ngFor='let radio of radios; let idx = index' [ngClass]="['radio']">
-          <input class="visually-hidden" id="rate_{{ idx }}" name="rate" type="radio">
+          <input [(ngModel)]="!isChecked" class="visually-hidden" id="rate_{{ idx }}" name="rate" type="radio">
           <label [ngClass]="['custom-checkbox']"
                  for="rate_{{ idx }}">{{ radio }}</label>
         </li>
       </ul>
-      <button (click)="submitResult()" type="button">SUBMIT</button>
+      <button (click)="submitResult()" [disabled]="isChecked ===false" type="button">SUBMIT</button>
     </form>
   </ng-template>
   <ng-template #displayResult>
