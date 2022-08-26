@@ -1,0 +1,34 @@
+<main role="main">
+  <div *ngIf="!display; then displayRate else displayResult"></div>
+  <ng-template #displayRate>
+    <div class="header-rating" role="heading">
+      <fa-icon [icon]="faStar"></fa-icon>
+      <h1>How did we do ?</h1>
+    </div>
+    <p class="text-body">
+      Please let us know how we did with your support request. All feedback is appreciated to help us improve our
+      offering!
+    </p>
+    <form>
+      <ul class="radio-wrapper">
+        <li *ngFor='let radio of radios; let idx = index' [ngClass]="['radio']">
+          <input class="visually-hidden" id="rate_{{ idx }}" name="rate" type="radio">
+          <label [ngClass]="['custom-checkbox']"
+                 for="rate_{{ idx }}">{{ radio }}</label>
+        </li>
+      </ul>
+      <button (click)="submitResult()" type="button">SUBMIT</button>
+    </form>
+  </ng-template>
+  <ng-template #displayResult>
+    <div class="header-result">
+      <img src="../../assets/images/illustration-thank-you.svg">
+      <p class="resume-result">You selected 4 out of 5</p>
+      <h2>Thank you!</h2>
+      <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in
+        touch!
+      </p>
+    </div>
+  </ng-template>
+
+</main>

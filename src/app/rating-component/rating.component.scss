@@ -146,5 +146,45 @@ main {
     max-width: 412px;
     padding: 32px;
   }
+
+  .header-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    img {
+      width: 144px;
+      @include desktop {
+        width: 162px;
+      }
+    }
+
+    .resume-result {
+      padding: 5px 12px;
+      margin: 24px 0;
+      color: $orange;
+      background-color: $dark-blue;
+      border-radius: 22.5px;
+      @include desktop {
+        margin: 32px 0;
+      }
+    }
+
+    h2 {
+      color: $white;
+    }
+
+    p {
+      text-align: center;
+
+      &:last-child {
+        @include desktop {
+          margin-bottom: 13px;
+        }
+      }
+
+    }
+  }
 }
 
