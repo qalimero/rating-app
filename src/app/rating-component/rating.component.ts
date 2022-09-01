@@ -9,9 +9,7 @@ import {faStar} from "@fortawesome/free-solid-svg-icons";
 export class RatingComponent {
   display = false;
   faStar = faStar;
-  radios = ['1', '2', '3', '4', '5'];
-  isChecked = false;
-  isDisable: boolean | undefined;
+  radios = [false, false, false, false, false];
 
   constructor() {
 
@@ -19,5 +17,9 @@ export class RatingComponent {
 
   submitResult() {
     this.display = !this.display;
+  }
+
+  allChecked() {
+    return this.radios.indexOf(false) === -1;
   }
 }
