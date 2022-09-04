@@ -12,18 +12,18 @@
     <form>
       <ul class="radio-wrapper">
         <li *ngFor='let radio of radios; let idx = index' [ngClass]="['radio']">
-          <input (change)="isChecked = true" class="visually-hidden" id="rate_{{ idx }}" name="rate" type="radio">
-          <label [ngClass]="['custom-checkbox']"
+          <input (focus)="onFocus()" (change)="isChecked = true" class="visually-hidden"  id="rate_{{ idx }}" name="rate" type="radio">
+          <label #label [ngClass]="['custom-checkbox']"
                  for="rate_{{ idx }}">{{ idx }}</label>
         </li>
       </ul>
-      <button (click)="submitResult()"  type="button">SUBMIT</button>
+      <button (click)="submitResult()" [disabled]="!focus"  type="button">SUBMIT</button>
     </form>
   </ng-template>
   <ng-template #displayResult>
     <div class="header-result">
       <img src="../../assets/images/illustration-thank-you.svg" alt="">
-      <p class="resume-result">You selected 4 out of 5</p>
+      <p class="resume-result">You selected on 5 </p>
       <h2>Thank you!</h2>
       <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in
         touch!

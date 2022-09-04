@@ -138,6 +138,12 @@ main {
         color: $orange;
         cursor: pointer;
       }
+      &:disabled{
+        background-color: $medium-grey;
+        &:hover {
+          color: $white;
+        }
+      }
     }
   }
 
