@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {faStar} from "@fortawesome/free-solid-svg-icons";
-import {formatNumber} from "@angular/common";
 
 @Component({
   selector: 'app-rating-component',
@@ -13,6 +12,7 @@ export class RatingComponent {
   radios = [1, 2, 3, 4, 5];
   isChecked = false;
   focus = false;
+  selected = '';
 
   constructor() {
   }
@@ -20,7 +20,14 @@ export class RatingComponent {
   submitResult() {
     this.display = !this.display;
   }
+
   onFocus() {
     this.focus = true;
+  }
+
+  onChange(target: EventTarget | null) {
+    this.isChecked = true;
+    const radio = target as HTMLInputElement;
+    this.selected = radio.value;
   }
 }
